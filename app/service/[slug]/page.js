@@ -1,13 +1,15 @@
 import ServiceInnerBanner from '../../../app/components/ServiceInnerBanner/index'
 import React from 'react'
-import { serviceDetails } from '../../../lib/json/pagesData/servicePage/serviceInner/shirodhara/index'
+import { serviceInner } from '../../../lib/json/pagesData/servicePage/serviceInner/index'
+import ServiceDetails from '../../../app/components/serviceDetailsSection'
 
 const SearviceInner = () => {
-  const BannerData= serviceDetails
-  console.log(BannerData,"ss")
+  const BannerData = serviceInner.shirodharaBannerData
+  const deatilsData=serviceInner.serviceDetails
   return (
     <div>
-      {/* <ServiceInnerBanner /> */}
+      <ServiceInnerBanner BannerData={BannerData} />
+      <ServiceDetails deatilsData={deatilsData} />
     </div>
   )
 }
