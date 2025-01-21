@@ -1,5 +1,5 @@
 "use client"
-import { footerData } from '@/lib/json/layoutData'
+import { footerData } from '../../../../lib/json/layoutData/index'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
