@@ -45,7 +45,7 @@ const Footer = () => {
 
 
         <div className='container '>
-          <div className='flex md:flex-row flex-col-reverse gap-y-12 items-center justify-between w-full pb-[120px] md:pb-[200px] lg:pb-[279px] '>
+          <div className={clsx('flex md:flex-row flex-col-reverse gap-y-12 items-center justify-between w-full ',isImageBackgroundPage ?" pb-[120px] md:pb-[200px] lg:pb-[279px]":" pb-[60px] md:pb-[80px] lg:pb-[100px]")}>
 
 
             <div className='w-full max-w-[648px]'>
