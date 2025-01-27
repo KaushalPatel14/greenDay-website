@@ -89,7 +89,8 @@ const ServiceDetails = ({ deatilsData }) => {
                                                             <Image
                                                                 src={item.item}
                                                                 alt=""
-                                                                 layout="intrinsic"
+                                                                width={400}
+                                                                height={400}
                                                                 className="w-full h-[220px] md:h-[280px] lg:h-[318px] object-cover"
                                                             />
                                                         </div>
