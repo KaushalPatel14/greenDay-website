@@ -19,4 +19,4 @@ const BranchDetails = () => {
   )
 }
 
-export default BranchDetails
+export default BranchDetails;
