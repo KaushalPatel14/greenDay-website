@@ -4,7 +4,6 @@ import Image from 'next/image'
 
 const BlogCard = ({ blogCard }) => {
     const { blogpost, button, varient } = blogCard || {}
-    console.log(blogpost, "blogpost")
     return (
         <div className='py-[96px]'>
             <div className='container'>
