@@ -6,7 +6,8 @@ const nextConfig = {
         NEXT_TOKEN : process.env.NEXT_TOKEN
     },
     images: {
-        domains: ["images.pexels.com","miro.medium.com", "www.cnet.com"],
+        domains: ['your-image-source.com'],
+        unoptimized: true,
       },
 };
 

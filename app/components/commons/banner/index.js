@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Button from '../button';
 
@@ -11,7 +12,7 @@ const Banner = ({ bannerData }) => {
                 const TitleTagComponent = Titletag || 'h2';
 
                 return (
-                    <div key={index} className='flex flex-col items-center justify-center sticky top-0  z-40 w-full' style={{ backgroundImage: `url(/images/heroBanner.png)`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+                    <div key={index} className='flex flex-col items-center justify-center sticky top-0  z-40 w-full' style={{ backgroundImage: `url(${image})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                         <div className='bg-black/30 py-[210px] md:py-[300px] lg:py-[358px] px-8 w-full'>
                             <div className='w-full max-w-[983px] mx-auto flex flex-col items-center'>
                                 {title && <TitleTagComponent className='text-center font-bold font-Dosis text-white' data-aos="fade-down">{title}</TitleTagComponent>}
