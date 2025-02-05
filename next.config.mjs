@@ -5,10 +5,6 @@ const nextConfig = {
         NEXT_X_API_KEY : process.env.NEXT_X_API_KEY,
         NEXT_TOKEN : process.env.NEXT_TOKEN
     },
-    images: {
-        domains: ['your-image-source.com'],
-        unoptimized: true,
-      },
 };
 
 export default nextConfig;
