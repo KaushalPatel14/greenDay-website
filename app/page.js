@@ -8,12 +8,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { banner, homeMeassageSection, homeTestimonial, PriceRatedata, welcomDaySpa } from "../lib/json/pagesData/homePage/index";
-import Banner from "./components/commons/banner";
-import GreenDaySpaSection from "./components/greenDaySpaSection";
-import MeassageSection from "./components/meassageSection";
-import PriceRateSection from "./components/priceRateSection";
-import TestimonialSection from "./components/testimonialSection";
-import Footer from "./components/commons/footer";
+import Banner from "./(main)/components/commons/banner";
+import GreenDaySpaSection from "./(main)/components/greenDaySpaSection";
+import MeassageSection from "./(main)/components/meassageSection";
+import PriceRateSection from "./(main)/components/priceRateSection";
+import TestimonialSection from "./(main)/components/testimonialSection";
+import Footer from "./(main)/components/commons/footer";
 
 import { motion } from 'framer-motion';
 
@@ -35,9 +35,9 @@ export default function Home() {
       >
         <SwiperSlide>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // transition={{ duration: 1 }}
           >
             <Banner bannerData={banner} />
           </motion.div>
@@ -45,9 +45,9 @@ export default function Home() {
 
         <SwiperSlide>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // transition={{ duration: 1 }}
           >
             <GreenDaySpaSection GreenDaySpaData={welcomDaySpa} />
           </motion.div>
@@ -55,9 +55,9 @@ export default function Home() {
 
         <SwiperSlide>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // transition={{ duration: 1 }}
           >
             <MeassageSection meassageSectionData={homeMeassageSection} />
           </motion.div>
@@ -65,9 +65,9 @@ export default function Home() {
 
         <SwiperSlide>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // transition={{ duration: 1 }}
           >
             <TestimonialSection TestimonialData={homeTestimonial} />
           </motion.div>
@@ -75,9 +75,9 @@ export default function Home() {
 
         <SwiperSlide>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // transition={{ duration: 1 }}
           >
             <PriceRateSection PriceRateSectiondata={PriceRatedata} />
           </motion.div>
@@ -85,9 +85,9 @@ export default function Home() {
 
         <SwiperSlide>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // transition={{ duration: 1 }}
           >
             <Footer />
           </motion.div>
