@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../commons/button';
+import Button from '../../(main)/components/commons/button/index';
 import Image from 'next/image';
 
 const HomeHeroSection = ({ bannerData }) => {

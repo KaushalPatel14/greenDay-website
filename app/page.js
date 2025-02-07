@@ -8,11 +8,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { banner, homeMeassageSection, homeTestimonial, PriceRatedata, welcomDaySpa } from "../lib/json/pagesData/homePage/index";
-import GreenDaySpaSection from "./components/greenDaySpaSection";
-import MeassageSection from "./components/meassageSection";
-import PriceRateSection from "./components/priceRateSection";
-import TestimonialSection from "./components/testimonialSection";
-import Footer from "./components/commons/footer";
+import Banner from "./(main)/components/commons/banner";
+import GreenDaySpaSection from "./(main)/components/greenDaySpaSection";
+import MeassageSection from "./(main)/components/meassageSection";
+import PriceRateSection from "./(main)/components/priceRateSection";
+import TestimonialSection from "./(main)/components/testimonialSection";
+import Footer from "./(main)/components/commons/footer";
+
 import HomeHeroSection from"../app/components/homeheroSection/index"
 
 export default function Home() {
@@ -27,45 +29,46 @@ export default function Home() {
         autoplay={false}
         loop={true}
         mousewheel={true}
-        modules={[EffectFade, Mousewheel,Autoplay]}
+        modules={[EffectFade, Mousewheel, Autoplay]}
         className=""
         speed={500}
       >
         <SwiperSlide>
-       
-            {/* <Banner bannerData={banner} /> */}
-            <HomeHeroSection bannerData={banner} />
-     
-        </SwiperSlide>
 
-        <SwiperSlide>
-     <GreenDaySpaSection GreenDaySpaData={welcomDaySpa} />
+          {/* <Banner bannerData={banner} /> */}
+
+          <HomeHeroSection bannerData={banner} />
 
         </SwiperSlide>
 
         <SwiperSlide>
-     
-            <MeassageSection meassageSectionData={homeMeassageSection} />
-   
+
+          <GreenDaySpaSection GreenDaySpaData={welcomDaySpa} />
+
         </SwiperSlide>
 
         <SwiperSlide>
-     
-            <TestimonialSection TestimonialData={homeTestimonial} />
-       
+
+          <MeassageSection meassageSectionData={homeMeassageSection} />
+
         </SwiperSlide>
 
         <SwiperSlide>
-   
-            <PriceRateSection PriceRateSectiondata={PriceRatedata} />
-   
+
+          <TestimonialSection TestimonialData={homeTestimonial} />
+
         </SwiperSlide>
 
         <SwiperSlide>
-  
-   
-            <Footer />
-     
+
+          <PriceRateSection PriceRateSectiondata={PriceRatedata} />
+
+        </SwiperSlide>
+
+        <SwiperSlide>
+
+          <Footer />
+
         </SwiperSlide>
       </Swiper>
     </div>
