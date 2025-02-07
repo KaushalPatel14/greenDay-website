@@ -1,8 +1,8 @@
 import React from 'react'
 import { serviceInner } from '../../../../lib/json/pagesData/servicePage/serviceInner/index'
-import ServiceDetails from '../../../app/components/serviceDetailsSection'
 import InstagramPost from '../.././components/commons/instagramPost/index'
 import InnerBanner from '../../components/innerBanner'
+import ServiceDetails from '../../components/serviceDetailsSection'
 
 const SearviceInner = () => {
   const BannerData = serviceInner.shirodharaBannerData
