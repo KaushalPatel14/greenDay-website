@@ -7,20 +7,51 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { banner, homeMeassageSection, homeTestimonial, PriceRatedata, welcomDaySpa } from "../lib/json/pagesData/homePage/index";
-import Banner from "./(main)/components/commons/banner";
+import {
+  banner,
+  homeMeassageSection,
+  homeTestimonial,
+  PriceRatedata,
+  welcomDaySpa,
+} from "../lib/json/pagesData/homePage/index";
 import GreenDaySpaSection from "./(main)/components/greenDaySpaSection";
 import MeassageSection from "./(main)/components/meassageSection";
 import PriceRateSection from "./(main)/components/priceRateSection";
 import TestimonialSection from "./(main)/components/testimonialSection";
 import Footer from "./(main)/components/commons/footer";
-
-import HomeHeroSection from"../app/components/homeheroSection/index"
+import HomeHeroSection from "../app/components/homeheroSection/index";
+import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+
+  const sectionRef = useRef(null);
+
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+
+          setAnimationKey((prevKey) => prevKey + 1);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
   return (
     <div className="relative">
-      {/* Swiper Sections with smooth fade transition */}
       <Swiper
         direction="vertical"
         slidesPerView={1}
@@ -30,45 +61,68 @@ export default function Home() {
         loop={true}
         mousewheel={true}
         modules={[EffectFade, Mousewheel, Autoplay]}
-        className=""
+        className="h-screen"
         speed={500}
       >
         <SwiperSlide>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
 
-          {/* <Banner bannerData={banner} /> */}
-
-          <HomeHeroSection bannerData={banner} />
-
+            <HomeHeroSection bannerData={banner} />
+          </motion.div>
         </SwiperSlide>
 
         <SwiperSlide>
-
-          <GreenDaySpaSection GreenDaySpaData={welcomDaySpa} />
-
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <GreenDaySpaSection sectionRef={sectionRef} animationKey={animationKey} GreenDaySpaData={welcomDaySpa} />
+          </motion.div>
         </SwiperSlide>
 
         <SwiperSlide>
-
-          <MeassageSection meassageSectionData={homeMeassageSection} />
-
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <MeassageSection meassageSectionData={homeMeassageSection} />
+          </motion.div>
         </SwiperSlide>
 
         <SwiperSlide>
-
-          <TestimonialSection TestimonialData={homeTestimonial} />
-
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <TestimonialSection TestimonialData={homeTestimonial} />
+          </motion.div>
         </SwiperSlide>
 
         <SwiperSlide>
-
-          <PriceRateSection PriceRateSectiondata={PriceRatedata} />
-
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <PriceRateSection PriceRateSectiondata={PriceRatedata} />
+          </motion.div>
         </SwiperSlide>
 
         <SwiperSlide>
-
-          <Footer />
-
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <Footer />
+          </motion.div>
         </SwiperSlide>
       </Swiper>
     </div>

@@ -23,7 +23,7 @@ const HomeHeroSection = ({ bannerData }) => {
                                     </div>
                                 }
                             </div>
-                            <Image src={image} alt='image' width={1920} height={1063} className='absolute inset-0 w-full max-w-[1920px] h-[1063px] -z-10' />
+                            <Image src={image} alt='image' width={1920} height={1063} priority loading='eager' className='absolute inset-0 w-full max-w-[1920px] h-[1063px] -z-10' />
                         </div>
                     );
                 })}
