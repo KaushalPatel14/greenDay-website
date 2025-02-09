@@ -175,75 +175,75 @@ const Carousel = ({
 
             {/* Custom pagination */}
             {dots && (
-                <div className="relative flex justify-center items-center mt-6">
-              {dotVariant === "priceRate" ? (
-      <div className="relative w-full max-w-auto flex items-center gap-4 mt-14">
-      {/* Background Line */}
-      <div className="absolute top-1/2 left-0 w-full h-[2px] bg-white/50 transform -translate-y-1/2"></div>
+                <div className="relative flex justify-center items-center mt-6 px-4">
+                    {dotVariant === "priceRate" ? (
+                        <div className="relative w-full max-w-auto flex items-center gap-4 mt-14">
+                            {/* Background Line */}
+                            <div className="absolute top-1/2 left-0 w-full h-[2px] bg-white/50 transform -translate-y-1/2"></div>
 
-      {/* Moving Progress Bar with Dots Image */}
-      <div
-          className="absolute top-1/2 left-0 h-[10px] transition-all duration-500 ease-in-out flex items-center"
-          style={{
-              width: `${((selectedIndex + 1) / safeData.length) * 100}%`, 
-              transform: "translateY(-50%)",
-          }}
-      >
-          <Image
-              src="/sliderDots.png"
-              alt="Slider Dots"
-              width={200} 
-              height={10} 
-              className="h-auto"
-              style={{
-                  transition: "transform 0.5s ease-in-out w-full",
-                  transform: `translateX(${(selectedIndex / (safeData.length - 1)) * 100}%)`, // Move based on index
-              }}
-          />
-      </div>
+                            {/* Moving Progress Bar with Dots Image */}
+                            <div
+                                className="absolute top-1/2 left-0 h-[10px] transition-all duration-500 ease-in-out flex items-center"
+                                style={{
+                                    width: `${((selectedIndex + 1) / safeData.length) * 100}%`,
+                                    transform: "translateY(-50%)",
+                                }}
+                            >
+                                <Image
+                                    src="/sliderDots.png"
+                                    alt="Slider Dots"
+                                    width={200}
+                                    height={10}
+                                    className="h-auto"
+                                    style={{
+                                        transition: "transform 0.5s ease-in-out w-full",
+                                        transform: `translateX(${(selectedIndex / (safeData.length - 1)) * 100}%)`, // Move based on index
+                                    }}
+                                />
+                            </div>
 
-      {/* Left Arrow */}
-      <button
-          className="absolute left-0 lg:-translate-x-12"
-          onClick={handlePrev}
-      >
-          <RightArrow />
-      </button>
+                            {/* Left Arrow */}
+                            <button
+                                className="absolute left-0 lg:-translate-x-12"
+                                onClick={handlePrev}
+                            >
+                                <RightArrow />
+                            </button>
 
-      {/* Right Arrow */}
-      <button
-          className="absolute right-0 ld:translate-x-12"
-          onClick={handleNext}
-      >
-          <LeftArrow />
-      </button>
-  </div>
-) : (
-    // Default Dots Pagination
-    <div className="flex gap-3">
-        {safeData.map((_, i) => (
-            <button
-                key={i}
-                className={clsx(
-                    "flex items-center",
-                    selectedIndex === i &&
-                        "border-[2px] border-white rounded-full w-[24px] h-[24px] flex items-center justify-center"
-                )}
-                onClick={() => goToSlide(i)}
-                aria-label={`Go to slide ${i + 1}`}
-            >
-                <div
-                    className={clsx(
-                        "w-[14px] h-[14px] border-[2px] rounded-full",
-                        selectedIndex === i
-                            ? "bg-white border-transparent"
-                            : "bg-[#272727] border-transparent"
+                            {/* Right Arrow */}
+                            <button
+                                className="absolute right-0 lg:translate-x-12"
+                                onClick={handleNext}
+                            >
+                                <LeftArrow />
+                            </button>
+                        </div>
+                    ) : (
+                        // Default Dots Pagination
+                        <div className="flex gap-3">
+                            {safeData.map((_, i) => (
+                                <button
+                                    key={i}
+                                    className={clsx(
+                                        "flex items-center",
+                                        selectedIndex === i &&
+                                        "border-[2px] border-white rounded-full w-[24px] h-[24px] flex items-center justify-center"
+                                    )}
+                                    onClick={() => goToSlide(i)}
+                                    aria-label={`Go to slide ${i + 1}`}
+                                >
+                                    <div
+                                        className={clsx(
+                                            "w-[14px] h-[14px] border-[2px] rounded-full",
+                                            selectedIndex === i
+                                                ? "bg-white border-transparent"
+                                                : "bg-[#272727] border-transparent"
+                                        )}
+                                    />
+                                </button>
+                            ))}
+                        </div>
                     )}
-                />
-            </button>
-        ))}
-    </div>
-)}
                 </div>
             )}
         </div>

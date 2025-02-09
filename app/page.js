@@ -23,32 +23,12 @@ import HomeHeroSection from "../app/components/homeheroSection/index";
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from "react";
 
+
+
+
+
 export default function Home() {
-
-  const sectionRef = useRef(null);
-
-  const [animationKey, setAnimationKey] = useState(0);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-
-          setAnimationKey((prevKey) => prevKey + 1);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="relative">
@@ -58,71 +38,38 @@ export default function Home() {
         spaceBetween={30}
         effect="fade"
         autoplay={false}
-        loop={true}
+        loop={false}
         mousewheel={true}
         modules={[EffectFade, Mousewheel, Autoplay]}
         className="h-screen"
         speed={500}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} 
       >
         <SwiperSlide>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-
-            <HomeHeroSection bannerData={banner} />
-          </motion.div>
+          <HomeHeroSection bannerData={banner}       animate={activeIndex === 0}  />
         </SwiperSlide>
 
         <SwiperSlide>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <GreenDaySpaSection sectionRef={sectionRef} animationKey={animationKey} GreenDaySpaData={welcomDaySpa} />
-          </motion.div>
+          <GreenDaySpaSection
+            GreenDaySpaData={welcomDaySpa}
+            animate={activeIndex === 1} // Only animate when this slide is active
+          />
         </SwiperSlide>
 
         <SwiperSlide>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <MeassageSection meassageSectionData={homeMeassageSection} />
-          </motion.div>
+          <MeassageSection meassageSectionData={homeMeassageSection} animate={activeIndex === 2} />
         </SwiperSlide>
 
         <SwiperSlide>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <TestimonialSection TestimonialData={homeTestimonial} />
-          </motion.div>
+          <TestimonialSection TestimonialData={homeTestimonial} animate={activeIndex === 3} />
         </SwiperSlide>
 
         <SwiperSlide>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <PriceRateSection PriceRateSectiondata={PriceRatedata} />
-          </motion.div>
+          <PriceRateSection PriceRateSectiondata={PriceRatedata} animate={activeIndex === 4} />
         </SwiperSlide>
 
         <SwiperSlide>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <Footer />
-          </motion.div>
+          <Footer  animate={activeIndex === 5} />
         </SwiperSlide>
       </Swiper>
     </div>
