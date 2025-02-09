@@ -1,24 +1,3 @@
-
-// "use client";
-// import React from 'react'
-// import Banner from '../(main)/components/commons/banner'
-// import { PageData } from "../../lib/json/pagesData/ourBranchPage/index";
-
-// const OurBranch = () => {
-//   const ourBranchData =PageData.ourBranchbanner
-  
-//   return (
-//     <div>
-//      <Banner bannerData={ourBranchData} />
-//     </div>
-//   )
-// }
-
-// export default OurBranch
-
-
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -80,12 +59,12 @@ const Service = () => {
         speed={500}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
-        {/* Service Banner Slides */}
+
         {ourBranchbanner.map((item, index) => {
           const { title, description, Titletag, button, image, link, variant } = item;
           const TitleTagComponent = Titletag || "h2";
           const animate = activeIndex === index;
-          const animationVariant = animations[index % animations.length]; // Select animation based on index
+          const animationVariant = animations[index % animations.length]; 
 
           return (
             <SwiperSlide
@@ -126,7 +105,7 @@ const Service = () => {
           );
         })}
 
-        {/* Footer Slide (Appears after last serviceBanner slide) */}
+      
         <SwiperSlide className="flex items-center justify-center h-screen bg-black">
           <Footer animate={activeIndex === ourBranchbanner.length} />
         </SwiperSlide>
