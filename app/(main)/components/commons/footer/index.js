@@ -53,7 +53,7 @@ const Footer = ({ animate }) => {
 
   return (
     <div style={backgroundStyle} className="relative">
-      <div className={clsx('overflow-hidden', isImageBackgroundPage ? "bg-black/30 pb-8 pt-28 em:pt-32 px-4 sm:px-8 min-h-screen flex items-center justify-center" : "py-[100px]")}>
+      <div className={clsx('overflow-hidden', isImageBackgroundPage ? "bg-black/30 pb-8 pt-28 em:pt-32 min-h-screen flex items-center justify-center" : "py-[100px]")}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={animate ? { opacity: 1, y: 0 } : { opacity: 1, y: 100 }}
@@ -62,22 +62,22 @@ const Footer = ({ animate }) => {
 
           <div className={clsx('flex md:flex-row flex-col-reverse gap-y-12 items-center justify-between w-full max-w-[700px] lg:max-w-[900px] xl:max-w-[1060px] ', isImageBackgroundPage ? "pb-8 md:pb-12" : " pb-[60px] md:pb-[80px] lg:pb-[100px]")}>
             <div className='w-full max-w-[650px]'>
-              <h4 className='font-Dosis font-bold text-2xl mb-4 em:mb-6 md:mb-[46px] text-white'>{title}</h4>
-              <p className='w-full max-w-[536px] text-base sm:text-lg text-white font-OpenSans tracking-[0.65px] mb-6 md:pb-[30px]'>{description}</p>
+              <h4 className='font-Dosis font-bold mb-4 em:mb-6 md:mb-[46px] text-white'>{title}</h4>
+              <p className='w-full max-w-[536px] text-base sm:text-lg text-white font-OpenSans tracking-[0.65px] pb-4 md:pb-[30px]'>{description}</p>
               <div className='flex lg:flex-row flex-col w-full justify-between gap-y-6 md:gap-y-8 gap-4'>
                 <div className='flex  flex-col items-start  justify-between gap-4 md:gap-y-8'>
                   {ContactUs && ContactUs.map((item, index) => (
                     <Link href={item.link} className='flex items-center gap-2' key={index}>
-                      <Image src={item.icon} alt="icon" width={30} height={30} className='w-[30px] h-[30px]' />
+                      <Image src={item.icon} alt="icon" width={30} height={30} className='w-[25px] em:w-[30px] h-[25px] em:h-[30px]' />
                       <span className='text-lg text-white font-OpenSans'>{item.name}</span>
                     </Link>
                   ))}
                 </div>
                 <div>
-                  <p className='text-lg text-white mb-4 font-OpenSans'>{subtitle}</p>
+                  <p className='text-base em:text-lg text-white mb-4 font-OpenSans'>{subtitle}</p>
                   {openTime.map((item, index) => (
                     <div className='flex items-center gap-2' key={index}>
-                      <Image src={item.icon} alt="icon" width={30} height={30} className='w-[30px] h-[30px]' />
+                      <Image src={item.icon} alt="icon" width={30} height={30} className='w-[25px] em:w-[30px] h-[25px] em:h-[30px]' />
                       <span className='text-lg text-white font-OpenSans'>{item.dateTime}</span>
                     </div>
                   ))}
@@ -86,7 +86,7 @@ const Footer = ({ animate }) => {
               <div className='flex items-center gap-5 mt-6 em:mt-10'>
                 {socialIcon.map((item, index) => (
                   <Link key={index} href={item.link || "#"}>
-                    <Image src={item.icon} alt="icon" width={30} height={30} className='w-[30px] h-[30px]' />
+                    <Image src={item.icon} alt="icon" width={30} height={30} className='w-[20px] em:w-[30px] h-[20px] em:h-[30px]' />
                   </Link>
                 ))}
               </div>
