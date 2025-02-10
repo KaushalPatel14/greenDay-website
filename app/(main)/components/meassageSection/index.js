@@ -167,7 +167,7 @@ const MeassageSection = ({ meassageSectionData , animate}) => {
                                     transition={{ duration: 1, ease: "easeInOut", delay: index * 0.4 }}
                                     className='relative flex flex-col items-center justify-center  z-10'>
                                         <div className='absolute inset-0 -z-10 flex items-center justify-center'>
-                                            <Image src={bgImage} alt='' width={400} height={400} className='object-contain h-[180px] md:h-[230px] lg:h-auto ' />
+                                            <Image src={bgImage} alt='' width={400} height={400} loading='eager' className='object-contain h-[180px] md:h-[230px] lg:h-auto ' />
                                         </div>
                                         <div className='h-full flex flex-col items-center justify-center gap-5'>
                                             <h5 className=' text-[26px] md:text-[30px] lg:text-[35px] font-semibold font-Dosis text-center'>
