@@ -14,7 +14,7 @@ const MeassageSection = ({ meassageSectionData, animate }) => {
                     {image && <div className='bg-black/30 px-8 w-full min-h-screen absolute inset-0 -z-10'></div>}
                 </div>
                 <div className='container py-28 em:py-32 px-4 sm:px-8 min-h-screen flex flex-col items-center justify-center'>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-4'  >
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 esm:gap-y-12 gap-4'  >
                         {meassageSectionMeassage &&
                             meassageSectionMeassage.map((item, index) => {
                                 const { title, description, button, varient, bgImage } = item || {}

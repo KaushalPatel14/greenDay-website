@@ -50,7 +50,7 @@ const Footer = ({ animate }) => {
 console.log(backgroundIamge[currentPath],"jjj")
   return (
     <div  className="relative">
-          <Image src={backgroundIamge[currentPath]} alt='' width={1920} height={1100} loading='eager' className='object-cover absolute inset-0 w-full min-h-screen -z-10 ' />
+      { backgroundIamge[currentPath] &&   <Image src={backgroundIamge[currentPath]} alt='' width={1920} height={1100} loading='eager' className='object-cover absolute inset-0 w-full min-h-screen -z-10 ' />}
       <div className={clsx('overflow-hidden', isImageBackgroundPage ? "bg-black/30 pb-8 pt-28 em:pt-32 min-h-screen flex items-center justify-center" : "py-[100px]")}>
 
         <motion.div
