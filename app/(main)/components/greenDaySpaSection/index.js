@@ -9,14 +9,8 @@ const GreenDaySpaSection = ({ GreenDaySpaData, animate }) => {
     return (
         <div
             className="relative z-10 overflow-hidden"
-            style={{
-                backgroundImage: `url(${bgImage})`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-            }}
         >
-            {bgImage && <div className="bg-black/30 px-8 w-full absolute inset-0 -z-10" />}
+
             <div className="container flex sm:flex-row flex-col items-center justify-center gap-6 lg:gap-8 pt-32 px-4 sm:px-8 min-h-screen ">
 
                 <motion.div
@@ -41,12 +35,22 @@ const GreenDaySpaSection = ({ GreenDaySpaData, animate }) => {
                     <Image
                         src={image}
                         alt="image"
+                        loading="eager"
                         width={400}
                         height={400}
                         className="absolute top-2 right-2 w-full max-w-[550px] lg:max-w-[648px] h-[380px] sm:h-[500px] md:h-[650px] lg:h-[756px] object-cover"
                     />
                 </motion.div>
             </div>
+            <Image
+                src={bgImage}
+                alt="image"
+                loading="eager"
+                width={1920}
+                height={1200}
+                className="absolute inset-0 w-full h-screen -z-10 object-cover "
+            />
+            {bgImage && <div className="bg-black/30 px-8 w-full h-screen absolute inset-0 -z-10" />}
         </div>
     );
 };
