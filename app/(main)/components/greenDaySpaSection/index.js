@@ -41,6 +41,7 @@ const GreenDaySpaSection = ({ GreenDaySpaData, animate }) => {
                     <Image
                         src={image}
                         alt="image"
+                        loading="eager"
                         width={400}
                         height={400}
                         className="absolute top-2 right-2 w-full max-w-[550px] lg:max-w-[648px] h-[380px] sm:h-[500px] md:h-[650px] lg:h-[756px] object-cover"
