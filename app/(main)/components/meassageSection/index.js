@@ -8,13 +8,13 @@ const MeassageSection = ({ meassageSectionData, animate }) => {
     const { image, meassageSectionMeassage } = meassageSectionData || {}
     return (
         <div>
-            {image ? <div className={clsx("relative z-10 h-full ")} >
+            {image ? <div className={clsx("relative z-10 ")} >
                 <div className=''>
                     <Image src={image} alt='' width={1920} height={1100} loading='eager' className='object-cover absolute inset-0 w-full min-h-screen -z-10 ' />
                     {image && <div className='bg-black/30 px-8 w-full min-h-screen absolute inset-0 -z-10'></div>}
                 </div>
-                <div className='container py-28 em:py-32 px-4 sm:px-8 pb-8 h-full md:h-auto max-h-full flex flex-col items-center justify-center'>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 esm:gap-y-12 gap-4'  >
+                <div className='container py-28 em:py-32 px-4 sm:px-8 min-h-screen flex flex-col items-center justify-center'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 esm:gap-y-12 gap-4'  >
                         {meassageSectionMeassage &&
                             meassageSectionMeassage.map((item, index) => {
                                 const { title, description, button, varient, bgImage } = item || {}
