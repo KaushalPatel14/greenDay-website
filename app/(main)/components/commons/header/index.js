@@ -35,7 +35,7 @@ const Header = () => {
             <div className=' container relative z-50'>
                 <div className='flex items-center justify-between pt-[30px] fixed right-0 left-0 w-full max-w-[1320px] mx-auto px-5'>
                     <Link href={"/"}>
-                        <Image src={"/images/logo.webp"} alt="logo" width={100} height={100} className='w-full max-w-[80px] sm:max-w-[110px] h-[50px] sm:h-[70px] object-cover' />
+                        <Image src={"/images/logo.webp"} alt="logo" priority  width={100} height={100} className='w-full max-w-[80px] sm:max-w-[110px] h-[50px] sm:h-[70px] object-cover' />
                     </Link>
                     <div onClick={handleClick} className='cursor-pointer'>
                         <ToggelIcon className='w-[34px] h-[18px]' />
