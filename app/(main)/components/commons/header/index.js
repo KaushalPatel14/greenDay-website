@@ -52,9 +52,9 @@ const Header = () => {
 
                             <div className='flex em:flex-row flex-col  items-start em:items-center justify-between gap-x-4 gap-y-12 w-full max-w-[850px]'>
 
-                                <div className='flex flex-col gap-4 em:gap-6 pt-[25px] em:pt-[50px] md:pt-[89px]'>
+                                <div className='flex flex-col gap-4 em:gap-6 pt-[25px] em:pt-[50px] md:pt-[62px]'>
                                     {navitemData.map((item, index) => (
-                                        <h4 key={index}>
+                                        <h4 key={index} className='text-[28px] md:text-[36px]  leading-[130%]'>
                                             <Link href={item.link} onClick={handleClose} className='text-white hover:text-white/70 font-Dosis font-semibold basic-transition '>
                                                 {item.item}
                                             </Link>

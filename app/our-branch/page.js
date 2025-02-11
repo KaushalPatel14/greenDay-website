@@ -72,7 +72,7 @@ const Service = () => {
               key={index}
               className=" w-full"  >
 
-              <div className="bg-black/30 min-h-screen flex flex-col items-center justify-center px-8 w-full">
+              <div className="bg-black/30 h-screen flex flex-col items-center justify-center px-8 w-full">
                 {image && <Image src={image} alt="images" priority loading="eager" width={1920} height={1060} className="absolute inset-0 min-h-screen -z-10 object-cover" />}
                 <motion.div
                   initial={animationVariant.initial}
