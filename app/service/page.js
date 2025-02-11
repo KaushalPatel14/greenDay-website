@@ -71,7 +71,7 @@ const Service = () => {
               key={index}
               className=" w-full  "
             >
-              <div className="bg-black/30 px-8 w-full min-h-screen flex flex-col items-center justify-center py-28 md:py-32">
+              <div className="bg-black/30 px-8 w-full h-screen flex flex-col items-center justify-center py-28 md:py-32">
                 <motion.div
                   initial={animationVariant.initial}
                   animate={animate ? animationVariant.animate : animationVariant.initial}

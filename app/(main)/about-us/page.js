@@ -27,7 +27,7 @@ const AboutUs = () => {
       <ServiceDetails deatilsData={serviceDetailsdata} className=" [&>div>:nth-child(1)]:!pb-0" />
       <MeassageSection meassageSectionData={meassageSectionData} animate={true} />
       <VidoeSection videoData={videoData} />
-      <TestimonialSection TestimonialData={TestimonialData} />
+      <TestimonialSection TestimonialData={TestimonialData} animate={true} />
       <NewsLatter newsLatterData={newsLatterData} />
       <InstagramPost instagramPostData={instagramPostData} />
     </div>
